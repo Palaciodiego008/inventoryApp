@@ -1,0 +1,13 @@
+create_table("lines") {
+t.Column("id", "uuid", {primary: true})
+t.Column("phone_line", "string", {})
+t.Column("carrier", "string", {})
+t.Column("associated_to", "string", {})
+t.Column("associated_device", "string", {})
+t.Column("end_contract_date", "string", {})
+t.Column("upgrade_eligibity", "date", {})
+t.Column("status", "string", {})
+t.Column("iccid", "string", {})
+t.Column("user_id", "uuid", {})
+t.Timestamps()
+}

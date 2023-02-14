@@ -1,0 +1,122 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-none p-3 bg-light rounded">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link ml-2" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reimbursements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link ml-2" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link text-info" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help Center</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ml-5">
+      <%= linkTo(newLinePath(), {body: "Add Resource", class: "btn btn-r text-white"})%>
+         
+       </div>
+    </nav>
+ <div class="d-flex row ml-4 mt-3">
+    <p class="textbread">Device ></p>
+    <p class="textbread">Wawandco ></p>
+    <p>Inventory</p>
+  </div>
+  <div class="text-inv ml-4 pb-3">
+    <p>Inventory</p>
+  </div>  
+    <div class="d-flex ml-1">
+      <p class="text-d">devices</p>
+      <u class="text-l">lines</u>
+    </div>
+    <hr>
+    <div class="navbar navbar-light justify-content-between">
+      <a class="navbar-brand ml-2">7 Line</a>
+      <form class="form-inline filter-s">
+        <input class="form-control mr-sm-3 fas fa-search" type="search" placeholder="Search (eg. by User, Carrier)" aria-label="Search" >
+        <button class="btn btn-secondary" type="submit">Filters 
+          <i class="fas fa-filter"></i>
+        </button>
+      </form>
+    </div>
+  <div class="container bg-light-white shadow col-sm-11">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" >Phone Line <i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Carrier <i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Associated To <i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Associated To Device <i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">End Contract Date <i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Upgrade Eligibity <i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Line Status <i class="fa fa-fw fa-sort"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+      <%= for (line) in lines { %>
+          <tr>
+          <%= linkTo(line, {class: "btn"}) { %>
+            <td>
+            <a class="blue-text"> <%= line.PhoneLine %></a>
+            </td>
+            <% } %>
+            
+            <td><%= line.Carrier %></td>
+            <td><%= line.User.FirstName + " " + line.User.LastName %></td>
+            <td><%= line.AssociatedDevice %></td>
+            <td><%= line.EndContractDate %></td>
+            <td><%= line.UpgradeEligibity.Format("01/02/2006") %></td>
+            <%= if (line.Status == "Active" ) {%>
+              <td><span class="badge bg-green"><%= line.Status %></span></td>
+              <% } else if (line.Status == "Suspended") { %>
+                <td><span class="badge2 bg-gray"><%= line.Status %></span></td>
+              <% } else if (line.Status == "Forwarding calls"){ %>
+                <td><span class="badge2 bg-blue"><%= line.Status%></span></td>
+                <% } else if (line.Status == "Deactivated"){ %>
+                <td><span class="badge2 bg-deactivated"><%= line.Status%></span></td>
+                <% } else if (line.Status == "Pending activation"){ %>
+                <td><span class="badge4 bg-pact"><%= line.Status%></span></td>
+                <% } else if (line.Status == "Pending deact"){ %>
+                <td><span class="badge5 bg-deact"><%= line.Status%></span></td>
+                <% } else if (line.Status == "Pending susp"){ %>
+                <td><span class="badge5 bg-deact"><%= line.Status%></span></td>
+                <% } %>
+                <td>
+                <div class="btn-group dropleft">
+  <button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-h"></i>
+  </button>
+    <div class="dropdown-menu">
+    <a class="dropdown-item" href="/lines/<%= line.ID %>/show">View Details</a>
+  <%= form({action: lineChangeStatusPath({id: line.ID}), method: "PUT"}) { %>
+    <%= f.InputTag({name:"Status", type: "submit", value: "Deactivated", class: "dropdown-item"}) %>
+    <%= f.InputTag({name:"Status", type: "submit", value: "Suspended", class: "dropdown-item"}) %>
+<% } %>
+  </div>
+</div>
+   </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>  
+  </div>
+  <div class="cointainer d-flex ml-5">
+    <p class="text-display ml-3">Displaying 1-25 of 50 
+      | &nbsp;&nbsp; <p class="blue-text">25</p> &nbsp;&nbsp; 50 &nbsp;&nbsp;100 &nbsp; results per page
+    </p>
+  </div>

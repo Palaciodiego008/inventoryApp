@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-none p-3 bg-light rounded">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link ml-2" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reimbursements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link ml-2" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link text-info" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help Center</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ml-5 d-flex">
+      <%= linkTo(rootPath(), {body: "Back", class: "btn btn btn-b text-white"})%>
+      <button type="submit" class="btn btn-r text-white ml-2" value="Save Line" form="create-line">Save Line</button> 
+       </div>
+    </nav>
+    <div class="d-flex row ml-4 mt-3">
+    <p class="textbread">Device ></p>
+    <p class="textbread">Wawandco ></p>
+    <p class="textbread">Inventory ></p>
+    <p>ADD LINE</p>
+  </div>
+<div class="ml-4 pb-2">
+    <p class="text-inv">Add Phone Line</p> 
+    <div>
+  </div>
+  <p class="text-inv mt-5">Device Details</p>
+    <hr>
+  </div>
+
+  
+  <%= form_for(line, {action: createLinePath(), method: "POST", id: "create-line"}) { %>
+    <div class="ml-4">
+        <div class="col-md-10">
+          <%= f.InputTag("Carrier",{value: line.Carrier, label: "Carrier*", placeholder: "Select a Carrier", required: true}) %>
+        </div>
+        <div class="col-md-10">
+            <%= f.InputTag("PhoneLine",{value: line.PhoneLine, label: "Phone Number *", placeholder: "000-000-000-000",required: true})%>
+        </div>
+        <div class="col-md-10">
+        <%= f.InputTag("Iccid",{value: line.Iccid, label: "ICCID ", placeholder: "ICCID"}) %>
+        </div>  
+        <div class="col-md-10">
+            <%= f.InputTag("AssociatedTo",{value: line.AssociatedTo, label: "AssociatedTo", placeholder: "AssociatedTo",required: true}) %>
+        </div>
+        <div class="col-md-10">
+            <%= f.InputTag("AssociatedDevice",{value: line.AssociatedDevice, label: "AssociatedDevice", placeholder: "AssociatedDevice",required: true}) %>
+        </div>
+        <div class="col-md-10">
+            <%= f.InputTag("Status",{value: line.Status, label: "Status", placeholder: "Status",required: true})%>
+        </div>
+        <div class="form-check form-check-inline ml-3">
+        <%= f.InputTag("date",{value: "Selectdate", label: "Select Date" , readonly: "readonly", type: "radio", class: "py-2"}) %>
+    </div>
+      <div class="form-check form-check-inline">
+      <%= f.InputTag("EndContractDate",{value:"Out of contract", label: "Out of contract" , readonly: "readonly", type: "radio", class: "py-2" }) %> 
+    </div>
+    <div class="col-md-10">
+            <%= f.InputTag("EndContractDate",{value: line.EndContractDate, label: "Date", type: "date", id: "inlineRadio1", required: true })%>
+     </div> 
+     <div class="col-md-10">
+     <%= f.SelectTag("UserID", {label:"User", options: users}) %>
+     </div>
+    </div>
+<% } %>
+<br>

@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-none p-3 bg-light rounded">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link ml-2" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reimbursements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ml-2" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help Center</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ml-5 d-flex">
+      <%= linkTo(userShowPath({id: user.ID}), {body: "Back", class: "btn btn btn-b text-white"})%>
+      <button type="submit" class="btn btn-r text-white ml-2" value="Save User" form="update-user">Save Changes</button> 
+       </div>
+    </nav>
+
+    <div class="d-flex row ml-4 mt-3">
+    <p class="textbread">Device ></p>
+    <p class="textbread">Wawandco ></p>
+    <p class="textbread">Inventory ></p>
+    <p>EDIT USER</p>
+  </div>
+  <div class="ml-4 pb-2">
+    <p class="text-inv">Add User</p> 
+    <div>
+  </div>
+  <p class="text-inv mt-5">Device Details</p>
+    <hr>
+  </div>
+  <h3 class="ml-4">Edit User:  <%= user.FirstName %> <%= user.LastName%>  </h3>
+  <%= form_for(user, {action: userUpdatePath({id: user.ID}), method: "PUT", id: "update-user"}) { %>
+    <div class="ml-4">
+    <div class="col-md-10">
+          <%= f.InputTag("FirstName",{value: user.FirstName, label: "First name*", placeholder: "First Name", required: true}) %>
+        </div>
+        <div class="col-md-10">
+            <%= f.InputTag("LastName",{value: user.LastName, label: "LastName *", placeholder: "Last Name", required: true})%>
+        </div>
+        <div class="col-md-10">
+        <%= f.InputTag("Email",{value: user.Email, label: "Email", placeholder: "Email", required: true}) %>
+        </div>  
+    </div>
+<% } %>
+<br>

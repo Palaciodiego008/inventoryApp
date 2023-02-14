@@ -1,0 +1,309 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+// This is just some CSS for the welcome home landing page, feel free to 
+// remove it.
+.welcome {
+    width: 700px;
+    margin: 0 auto;
+    
+    img { 
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.btn-r{
+    background-color: #01B0ED;
+    padding-left: 30px;
+    padding-right: 30px;
+   margin-right: 125px;
+}
+.bg-light-blue{
+    background-color: #62B9CF;
+}
+.bg-light-gray {
+    background-color: #c2cfd5 ;
+}
+.bg-light-white {
+    background-color: white;
+}
+
+
+.bg-dark-blue {
+    background-color: rgb(13, 57, 99);
+}
+
+.color-dark-blue {
+    color: rgb(13, 57, 99);
+}
+
+.width-addtask {
+    width: 170px;
+}
+
+.height-footer {
+    height: 450px;
+}
+
+.height-fixed {
+    height: 56px;
+}
+
+
+.question{
+    color: #01B0ED;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.cog{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    background-color: white;
+    color: gray;
+}
+
+.line1{
+    border:       none;
+     border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         30px;
+    width:          1px; 
+    
+}
+
+.usr{
+    color: #01B0ED;
+    font-size: 30px;
+    margin-right: 30px;
+}
+
+.dropuser{
+    margin-right: 35px;
+}
+
+.line{
+    border:       none;
+     border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         30px;
+    width:          1px;  
+}
+
+.spro{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #01B0ED;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+  
+    
+}
+
+.bg-nav{
+     background-color:  #c2cfd5 ;
+     border-radius: 14px;
+     border: 1px;
+     color: #21b7b7;
+     margin-left: 8px;
+}
+
+.textbread{
+color: #b4b4bb ;
+}
+
+.text-inv{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text-l{
+    text-transform: uppercase;
+    color:  #05AFEC;
+    margin-left: 15px;
+    
+}
+.text-d{
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.linee{
+    display: flex;
+    justify-content: center;
+    width: 924px;
+    margin-bottom: 15px;
+    margin: auto
+}
+.line{
+    color: #c5c5c5;
+}
+
+.blue-text{
+    color: #01B0ED;
+}
+
+.badge {
+    display: inline-block;
+   // min-width: 10px;
+    padding: 8px 3px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+   // background-color: #777;
+    border-radius: 16px;
+    text-transform: uppercase;
+}
+
+
+.bg-green {
+    background-color:  #87d53c 
+}
+.bg-gray{
+    background-color: gray;
+}
+
+
+.bg-blue{
+    background-color: #01B0ED;
+}
+
+.bg-deactivated{
+background-color: #C1CFD5;
+}
+.badge2 {
+    display: inline-block;
+    //min-width: 10px;
+    padding: 8px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    //background-color: #777;
+    border-radius: 16px;
+    text-transform: uppercase;
+}
+
+.bg-psus{
+    color: rgb(51, 48, 48);
+}
+.bg-pact{
+    color:greenyellow
+}
+.bg-deact{
+    color: rgb(51, 40, 40);
+}
+
+.badge3 {
+    display: inline-block;
+    //min-width: 10px;
+    padding: 8px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    background-color:rgba(128, 128, 128, 0.068);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 16px;
+    text-transform: uppercase;
+}
+.badge4 {
+    display: inline-block;
+    //min-width: 10px;
+    padding: 8px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    //background-color: greenyellow;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 16px;
+    text-transform: uppercase;
+    border: 1px solid greenyellow;
+}
+.badge5{
+    display: inline-block;
+    //min-width: 10px;
+    padding: 8px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    //background-color: greenyellow;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 16px;
+    text-transform: uppercase;
+    border: 1px solid gray;
+}
+
+
+.footer{
+    background-color:#23242A;
+    width: 100%;
+    //height: 100px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+
+.icon-f{
+  
+  font-size: 30px;
+}
+
+.t-f{
+    font-size: 20px;
+margin-right: 25px;
+}
+
+
+.filter-s{
+    margin-right: 8%;
+}
+.divider{
+    border-top: 1px solid grey;
+}
+
+.icons {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr) );
+    gap: 1.25rem;
+  }
+  .icon {
+    background-color: var(--bs-light);
+    border-radius: .25rem;
+  }
+ 
+
+  .btn-b{
+    background-color: grey;
+   // padding-left: 30px;
+    //padding-right: 30px;
+  // margin-right: 125px;
+  }
+
+  .header_logo{
+      margin-left:110px;
+  }

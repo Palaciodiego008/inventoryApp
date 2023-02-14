@@ -1,0 +1,5 @@
+add_foreign_key("lines", "user_id", {"users": ["id"]}, {
+    "name": "relation_fk_lineuser",
+    "on_delete": "cascade",
+    "on_update": "cascade",
+})

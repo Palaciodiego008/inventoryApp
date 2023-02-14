@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-none p-3 bg-light rounded">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link ml-2" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reimbursements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link ml-2" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="bg-nav nav-link text-info" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help Center</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ml-5 d-flex">
+      <%= linkTo(rootPath(), {body: "Back", class: "btn btn btn-b text-white fast fas-angle-left"})%>
+          <button class="btn btn-r text-white ml-2" type="button">Process Request</button>
+       </div>
+    </nav>
+    <div class="d-flex row ml-4 mt-3">
+    <p class="textbread">Device ></p>
+    <p class="textbread">Wawandco ></p>
+    <p class="textbread">Inventory ></p>
+    <p>User Details</p>
+  </div>
+  <div class="ml-4 pb-2">
+    
+    <p class="text-inv">User OverView</p> 
+    <div>
+    <p class="text-inv">User Details</p>
+    <hr>
+  </div>
+  </div>
+    <div class="ml-2 d-flex">
+        <div class="col-sm-2 text-bread">
+            <p class="textbread">First name</p>  
+            <p class="textbread">Last Name</p>
+            <p class="textbread">Email</p>
+            
+        </div>
+       <div>
+            <p> <%= user.FirstName %> </p>
+            <p> <%= user.LastName %>   </p>
+            <p> <%= user.Email %></p>
+    </div>
+ </div>
+<div class="ml-4 pb-2">
+    <p class="text-inv">Associated Lines</p>
+ <hr>
+</div>
+
+<div class="ml-2 d-flex ">
+        <div class="col-sm-2 text-bread">
+            <p class="textbread">User</p>  
+            <p class="textbread">Device</p>
+            <p class="textbread">Device IMEI</p>
+        </div>   
+        <div>
+        </div> 
+</div>
+<%= linkTo(editUserPath({id: user.ID}), {body: "Edit User", class: "btn btn-primary ml-3"})%>
+<%= linkTo(userDeletePath({id: user.ID}), {body: "Delete", class: "btn btn-danger", data-method: "DELETE", data-confirm: "Are you sure you want to delete this user?"})%>
+
+ <br>
+
+
+    
